@@ -155,7 +155,7 @@
 	<meta name="apple-mobile-web-app-title" content="Font Installer" />
 	<meta
 		name="description"
-		content="This tool installs fonts systemwide on Apple devices using configuration profiles."
+		content="This tool installs fonts on Apple devices using configuration profiles."
 	/>
 	<title>Font Installer</title>
 </svelte:head>
