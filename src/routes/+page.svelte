@@ -1,5 +1,12 @@
 <script>
-	import { Button, Collection, List, ListRowImage, ListTextFieldRow } from 'apple-svelte';
+	import {
+		Button,
+		Collection,
+		List,
+		ListTextFieldRow,
+		NavigationBar,
+		NavigationBarTrailing
+	} from 'apple-svelte';
 	import './styles.css';
 
 	let base64EncodedFontFile = undefined;
@@ -147,6 +154,26 @@
 			);
 		}
 	}
+
+	/* Randomly generate the accent color. */
+	let colors = [
+		'red',
+		'orange',
+		'yellow',
+		'green',
+		'mint',
+		'teal',
+		'cyan',
+		'blue',
+		'indigo',
+		'purple',
+		'pink',
+		'brown'
+	];
+
+	let randomIndex = Math.floor(Math.random() * colors.length);
+
+	let color = colors[randomIndex];
 </script>
 
 <svelte:head>
@@ -163,9 +190,20 @@
 	/>
 	<title>Font Installer</title>
 </svelte:head>
-
-<main>
-	<h1 class="large-title-emphasized">Font Installer</h1>
+<main style="--colors-accent: var(--colors-{color}); --colors-accent-2: var(--colors-{color}-2)">
+	<NavigationBar showBackground size="large" title="Font Installer" style="margin: -24px -16px 0px">
+		<NavigationBarTrailing slot="leading" state="disabled" symbol="pending" />
+		<NavigationBarTrailing
+			slot="trailing-1"
+			type="text"
+			label="GitHub"
+			onPress={() => window.open('https://github.com/Carza-104/Font-Installer', '_blank')}
+		/>
+	</NavigationBar>
+	<div class="banner">
+		This page was built with apple-svelte, a Svelte component library based on Apple's UI design
+		language. Check it out on <a href="https://github.com/Carza-104/apple-svelte">GitHub</a>.
+	</div>
 	<Collection style="gap: 24px">
 		<div class="text">
 			<div>
@@ -224,12 +262,6 @@
 </main>
 
 <style>
-	:root {
-		color-scheme: light dark;
-		--colors-accent: var(--colors-purple);
-		--colors-accent-2: var(--colors-purple-2);
-	}
-
 	main {
 		display: flex;
 		flex-direction: column;
@@ -237,10 +269,19 @@
 		padding: 24px 16px;
 	}
 
+	.banner {
+		background: var(--colors-accent-2);
+		border-radius: 10px;
+		padding: 11px 16px;
+	}
+
 	.text {
+		background: var(--bg-grouped-secondary);
+		border-radius: 10px;
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+		padding: 11px 16px;
 	}
 
 	.symbol {
