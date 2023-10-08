@@ -197,7 +197,7 @@
 			slot="trailing-1"
 			type="text"
 			label="GitHub"
-			onPress={() => window.open('https://github.com/Carza-104/Font-Installer', '_blank')}
+			onPress={() => window.open('https://github.com/Carza-104/font-installer', '_blank')}
 		/>
 	</NavigationBar>
 	<div class="banner">
