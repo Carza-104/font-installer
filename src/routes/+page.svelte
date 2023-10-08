@@ -201,8 +201,11 @@
 		/>
 	</NavigationBar>
 	<div class="banner">
-		This page was built with apple-svelte, a Svelte component library based on Apple's UI design
-		language. Check it out on <a href="https://github.com/Carza-104/apple-svelte">GitHub</a>.
+		<p class="large-title symbol">report</p>
+		<p>
+			This page was built with apple-svelte, a Svelte component library based on Apple's UI design
+			language. Check it out on <a href="https://github.com/Carza-104/apple-svelte">GitHub</a>.
+		</p>
 	</div>
 	<Collection style="row-gap: 24px">
 		<div class="text">
@@ -270,8 +273,11 @@
 	}
 
 	.banner {
+		align-items: center;
 		background: var(--colors-accent-2);
 		border-radius: 10px;
+		display: flex;
+		gap: 12px;
 		padding: 11px 16px;
 	}
 
