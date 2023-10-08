@@ -204,7 +204,7 @@
 		This page was built with apple-svelte, a Svelte component library based on Apple's UI design
 		language. Check it out on <a href="https://github.com/Carza-104/apple-svelte">GitHub</a>.
 	</div>
-	<Collection style="gap: 24px">
+	<Collection style="row-gap: 24px">
 		<div class="text">
 			<div>
 				<p class="large-title symbol">info</p>
