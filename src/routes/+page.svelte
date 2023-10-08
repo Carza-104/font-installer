@@ -3,6 +3,7 @@
 		Button,
 		Collection,
 		List,
+		ListRowImage,
 		ListTextFieldRow,
 		NavigationBar,
 		NavigationBarTrailing
@@ -201,7 +202,7 @@
 		/>
 	</NavigationBar>
 	<div class="banner">
-		<p class="symbol">report</p>
+		<ListRowImage type="symbol" symbol="report" />
 		<p>
 			This page was built with apple-svelte, a Svelte component library based on Apple's UI design
 			language. Check it out on <a href="https://github.com/Carza-104/apple-svelte">GitHub</a>.
