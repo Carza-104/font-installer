@@ -34,7 +34,12 @@
 	}
 
 	function init() {
-		if (document.getElementById('font-file').files[0] === undefined) {
+		if (
+			document.getElementById('profile-name').value === undefined ||
+			document.getElementById('profile-organization').value === undefined ||
+			document.getElementById('profile-description').value === undefined ||
+			document.getElementById('font-file').files[0] === undefined
+		) {
 			return;
 		}
 		profileName = document.getElementById('profile-name').value;
@@ -318,5 +323,11 @@
 		font-size: calc(15px * var(--medium-symbol-font-size-multiplier));
 		font-weight: calc(400 / var(--medium-symbol-font-size-multiplier));
 		line-height: 20px;
+	}
+
+	.button:active,
+	.button:focus {
+		background: linear-gradient(var(--press-overlay) 0%, var(--press-overlay)),
+			var(--colors-accent-2);
 	}
 </style>
