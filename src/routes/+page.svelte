@@ -192,7 +192,7 @@
 	<meta name="apple-mobile-web-app-title" content="Font Installer" />
 	<meta
 		name="description"
-		content="This tool installs fonts on Apple devices using configuration profiles."
+		content="This tool installs fonts on iOS and iPadOS devices using configuration profiles."
 	/>
 	<title>Font Installer</title>
 </svelte:head>
@@ -220,7 +220,7 @@
 				<h5 class="headline">About this tool</h5>
 			</div>
 			<p>
-				This tool installs fonts systemwide on Apple devices using configuration profiles,
+				This tool installs fonts systemwide on iOS and iPadOS devices using configuration profiles,
 				.mobileconfig XML files.
 			</p>
 		</div>
