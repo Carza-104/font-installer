@@ -259,7 +259,8 @@
 						on:change={updateButtonText}
 						type="file"
 					/>
-					<div class="button">
+					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+					<div class="button" tabindex="0">
 						<p class="symbol">north</p>
 						<p class="subheadline" id="upload-button">Font</p>
 					</div>
