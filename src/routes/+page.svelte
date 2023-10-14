@@ -21,6 +21,7 @@
 	let profileName = undefined;
 	let profileOrganization = undefined;
 	let reader = undefined;
+	let text = 'Font';
 	let url = undefined;
 	let uuid = undefined;
 
@@ -28,23 +29,20 @@
 		if (document.getElementById('font-file').files[0] === undefined) {
 			return;
 		}
-		fontFile = document.getElementById('font-file').files[0];
-		fontFilename = fontFile.name;
-		document.getElementById('upload-button').textContent = fontFilename;
+		fontFilename = document.getElementById('font-file').files[0].name;
+		text = fontFilename;
 	}
 
 	function init() {
 		if (
-			document.getElementById('profile-name').value === undefined ||
-			document.getElementById('profile-organization').value === undefined ||
-			document.getElementById('profile-description').value === undefined ||
+			profileName === undefined ||
+			profileOrganization === undefined ||
+			profileDescription === undefined ||
 			document.getElementById('font-file').files[0] === undefined
 		) {
 			return;
 		}
-		profileName = document.getElementById('profile-name').value;
-		profileOrganization = document.getElementById('profile-organization').value;
-		profileDescription = document.getElementById('profile-description').value;
+
 		fontFile = document.getElementById('font-file').files[0];
 		fontFilename = fontFile.name;
 		profileFilename = profileName + '.mobileconfig';
@@ -246,9 +244,9 @@
 		</div>
 		<div>
 			<List showHeader header="PROFILE INSTALLER">
-				<ListTextFieldRow title="Name" id="profile-name" />
-				<ListTextFieldRow title="Org…" id="profile-organization" />
-				<ListTextFieldRow title="Desc…" id="profile-description" />
+				<ListTextFieldRow bind:value={profileName} title="Name" />
+				<ListTextFieldRow bind:value={profileOrganization} title="Org…" />
+				<ListTextFieldRow bind:value={profileDescription} title="Desc…" />
 			</List>
 			<div class="buttons">
 				<label>
@@ -262,7 +260,7 @@
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<div class="button" tabindex="0">
 						<p class="symbol">north</p>
-						<p class="subheadline" id="upload-button">Font</p>
+						<p class="subheadline">{text}</p>
 					</div>
 				</label>
 				<Button size="medium" type="filled" symbol="south" label="Download" onPress={init} />
