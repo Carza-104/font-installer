@@ -19,6 +19,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"apple-svelte": "^0.2.4"
+		"apple-svelte": "^1.0.20"
 	}
 }
