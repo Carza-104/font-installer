@@ -142,7 +142,7 @@
 			const central = [];
 			put32(central, 0x02014b50); put16(central, 20); put16(central, 20); put16(central, 0x0800); put16(central, 0);
 			put16(central, 0); put16(central, 0); put32(central, crc); put32(central, data.length); put32(central, data.length);
-			put16(central, name.length); put16(central, 0); put16(central, 0); put16(central, 0); put16(0); put32(0); put32(offset);
+			put16(central, name.length); put16(central, 0); put16(central, 0); put16(central, 0); put16(central, 0); put32(central, 0); put32(central, offset);
 			centralParts.push(new Uint8Array(central), name);
 			offset += local.length + name.length + data.length;
 		}
